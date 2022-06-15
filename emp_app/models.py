@@ -7,9 +7,17 @@ class Department(models.Model):
     name = models.CharField(max_length=100,null=False)
     location = models.CharField(max_length=100)
 
+    # Функция чтобы возвращать корректные данные в админке
+    def __str__(self):
+        return self.name
+
 
 class Role(models.Model):
     name = models.CharField(max_length=100, null=False)
+
+    # Функция чтобы возвращать корректные данные в админке
+    def __str__(self):
+        return self.name
 
 
 class Employee(models.Model):
@@ -21,3 +29,7 @@ class Employee(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
     phone = models.IntegerField(default=0)
     hire_date = models.DateField()
+
+    # Функция чтобы возвращать корректные данные в админке (Имя, фамилию, телефон)
+    def __str__(self):
+        return "%s %s %s" %(self.first_name, self.last_name, self.phone)
