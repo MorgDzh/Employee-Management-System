@@ -1,25 +1,25 @@
 # EmployeeManagementSystem
-## Система управления работниками
+## Employee management system
 
-### Установка
+### Installation
 
-#### 1) Склонить репозиторий
+#### 1) Clone the repository
     git clone <repository link>
   
-#### 2) Создать виртуальное окружение
+#### 2) Create a virtual environment
     python -m venv venv
 
-#### 3) Активировать виртуальное окружение
+#### 3) Activate the virtual environment
     . venv/bin/activate
    
-#### 4) Установить зависимости:
+#### 4) Install dependencies:
     pip install -r req.txt
 
-#### 5) Выполнить команду для выполнения миграций
+#### 5) Run the command to perform migrations
     python manage.py migrate
 
-#### 6) Создать суперпользователя
+#### 6) Create a superuser
     python manage.py createsuperuser
 
-#### 7) Запустить сервер
+#### 7) Run the server
     python manage.py runserver
