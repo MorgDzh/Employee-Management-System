@@ -1,5 +1,5 @@
 # EmployeeManagementSystem
-## Employee management system
+## Office Employee Management System
 
 ### Installation
 
