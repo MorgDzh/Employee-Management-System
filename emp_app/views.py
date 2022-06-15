@@ -36,8 +36,19 @@ def add_emp(request):
         return HttpResponse("An Exception Occured! Employee Has Not Been Added")
 
 
-def remove_emp(request):
-    return render(request, 'remove_emp.html')
+def remove_emp(request, emp_id = 0):
+    if emp_id:
+        try:
+            emt_to_be_removed = Employee.objects.get(id=emp_id)
+            emt_to_be_removed.delete()
+            return HttpResponse("Employee Removed Successfully")
+        except:
+            return HttpResponse("Please Enter A Valid EMP ID")
+    emps = Employee.objects.all()
+    context = {
+        'emps': emps
+    }
+    return render(request, 'remove_emp.html', context)
 
 
 def filter_emp(request):
